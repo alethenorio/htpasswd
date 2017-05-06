@@ -16,6 +16,3 @@ tar cfvz "${NAME}-${VERSION}-tar.gz" .
 go build -o "${BINARY}" -ldflags "-X main.Version=${VERSION} -X main.buildTime=`date -u '+%Y-%m-%d_%I:%M:%S%p'` -X main.commitId=${TRAVIS_COMMIT}"
 
 mv "${NAME}-${VERSION}-tar.gz" dist/
-
-
-
