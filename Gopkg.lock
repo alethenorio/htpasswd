@@ -1,0 +1,7 @@
+memo = "7cc349d1880d11d1362132b1ff10e43cb024eee44f1b32a230db3f8eacac298a"
+
+[[projects]]
+  name = "github.com/ogier/pflag"
+  packages = ["."]
+  revision = "32a05c62658bd1d7c7e75cbc8195de5d585fde0f"
+  version = "v0.0.1"
