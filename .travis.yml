@@ -2,3 +2,13 @@ language: go
 
 go:
   - 1.8.x
+  - master
+
+gobuild_args: -ldflags "-X main.Version=${TRAVIS_TAG} -X main.buildTime=`date -u '+%Y-%m-%d_%I:%M:%S%p'` -X main.commitId=${TRAVIS_COMMIT}"
+
+matrix:
+  include:
+    - go: "1.8.x"
+env:
+  - GOOS=linux GOARCH=amd64
+  - GOOS=windows GOARCH=amd64
