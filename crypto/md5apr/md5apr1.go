@@ -1,6 +1,3 @@
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
-
 // Package md5apr implements the MD5 APR hash algorithm
 // This is a pretty ugly implementation of the hash.Hash api as I am not a crypto expert
 // The algorithm implementation for MD5 APR1 is based on the one found here https://github.com/jimstudt/http-authentication/blob/master/basic/md5.go
