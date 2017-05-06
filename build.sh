@@ -11,8 +11,8 @@ if [ "$GOOS" == "windows" ]; then
     BINARY="${BINARY}.exe"
 fi
 
-tar cfvz "${NAME}-${VERSION}-tar.gz" .
+tar --exclude=".git" cfvz "/tmp/${NAME}-${VERSION}-tar.gz" .
 
 go build -o "${BINARY}" -ldflags "-X main.Version=${VERSION} -X main.buildTime=`date -u '+%Y-%m-%d_%I:%M:%S%p'` -X main.commitId=${TRAVIS_COMMIT}"
 
-mv "${NAME}-${VERSION}-tar.gz" dist/
+mv "/tmp/${NAME}-${VERSION}-tar.gz" dist/
