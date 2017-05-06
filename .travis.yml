@@ -9,3 +9,6 @@ gobuild_args: -ldflags "-X main.Version=${TRAVIS_TAG} -X main.buildTime=`date -u
 env:
   - GOOS=linux GOARCH=amd64
   - GOOS=windows GOARCH=amd64
+
+after_success:
+  - ./build.sh
