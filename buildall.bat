@@ -14,13 +14,15 @@ set ldt=%ldt:~0,4%-%ldt:~4,2%-%ldt:~6,2%_%ldt:~8,2%:%ldt:~10,2%:%ldt:~12,6%
 set BUILDTIME=%ldt%
 
 
-set CGO_ENABLED=0
 
 echo Building version=%VERSION% from commit=%COMMITID% for %GOOS%/%GOARCH%
+
+set CGO_ENABLED=0
 go build -a -installsuffix cgo -o "%BINARY%" -ldflags "-X main.version=%VERSION% -X main.buildTime=%BUILDTIME% -X main.commitId=%COMMITID%"
 
 set GOOS=windows
 set GOARCH=amd64
+set BINARY=dist/%NAME%-%GOOS%-%GOARCH%.exe
 
 echo Building version=%VERSION% from commit=%COMMITID% for %GOOS%/%GOARCH%
-go build -o "%BINARY%.exe" -ldflags "-X main.version=%VERSION% -X main.buildTime=%BUILDTIME% -X main.commitId=%COMMITID%"
+go build -o "%BINARY%" -ldflags "-X main.version=%VERSION% -X main.buildTime=%BUILDTIME% -X main.commitId=%COMMITID%"
