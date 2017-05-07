@@ -10,10 +10,10 @@ VERSION="$(git describe --tags)"
 
 COMMITID="$(git rev-parse HEAD)"
 
-BUILDTIME="$(date -u '+%Y-%m-%d_%I:%M:%S%p')"
+BUILDTIME="$(date -u '+%Y-%m-%d_%H:%M:%S')"
 
 echo "Building version=${VERSION} from commit=${COMMITID} for ${GOOS}/${GOARCH}"
-CGO_ENABLED=0 go build -a -installsuffix cgo -o "${BINARY}" -ldflags "-X main.version=${VERSION} -X main.buildTime=${BUILDTIME} -X main.commitId=${COMMITI}"
+CGO_ENABLED=0 go build -a -installsuffix cgo -o "${BINARY}" -ldflags "-X main.version=${VERSION} -X main.buildTime=${BUILDTIME} -X main.commitId=${COMMITID}"
 
 GOOS=windows
 GOARCH=amd64
