@@ -8,7 +8,7 @@ import (
 
 var username *string = flag.StringP("username", "u", "", "Username to be used in .htpasswd")
 var passwd *string = flag.StringP("passwd", "p", "", "Password to be used in .htpasswd")
-var algo *string = flag.StringP("algo", "a", "MD5", "Algorithm to use for hashing passwords. Default: SHA1")
+var algo *string = flag.StringP("algo", "a", "MD5", "Algorithm to use for hashing passwords. Default: MD5")
 var versionf *bool = flag.BoolP("version", "v", false, "Prints information about the tool")
 
 var (
