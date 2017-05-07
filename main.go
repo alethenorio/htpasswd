@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	flag "github.com/ogier/pflag"
-	"log"
 	"os"
 )
 
@@ -27,11 +26,13 @@ func main() {
 	}
 
 	if len(*username) == 0 {
-		log.Fatal("Username cannot be empty")
+		fmt.Fprint(os.Stderr, "Username cannot be empty\n")
+		os.Exit(1)
 	}
 
 	if len(*passwd) == 0 {
-		log.Fatal("Password cannot be empty")
+		fmt.Fprint(os.Stderr, "Password cannot be empty\n")
+		os.Exit(1)
 	}
 
 	hash, err := NewHash(*algo)

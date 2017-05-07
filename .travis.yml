@@ -12,3 +12,7 @@ env:
 
 after_success:
   - ./build.sh
+
+matrix:
+  allow_failures:
+  - go: master
