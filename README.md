@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/ByteFlinger/htpasswd.svg?branch=master)](https://travis-ci.org/ByteFlinger/htpasswd)
 
 # htpasswd
-Tool for generate and manage htpasswd files
+Tool for generating and managing htpasswd files
 
 CAUTION
 ---------------
